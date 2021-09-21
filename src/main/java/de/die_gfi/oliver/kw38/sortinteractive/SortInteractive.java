@@ -12,8 +12,6 @@ public class SortInteractive {
         String s = scanner.nextLine();
         String sorted = createOutputString(sortNames(extractNames(s)));
         System.out.println("Sortiert: " + sorted);
-
-
     }
 
     // Program logic
