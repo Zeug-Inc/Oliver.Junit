@@ -10,6 +10,7 @@ public class BinarySorter {
      * -1 in case of error
      */
 
+
     public static int binaryToDec(String binary) {
 
         int result = 0;
