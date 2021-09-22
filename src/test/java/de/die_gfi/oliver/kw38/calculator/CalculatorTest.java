@@ -27,7 +27,9 @@ class CalculatorTest {
     void testEvaluate() {
 
         Calculator calc = new Calculator();
-        Assertions.assertEquals(3, calc.evaluate(new MathExpression(1, 2, '+')));
-        Assertions.assertEquals(7, calc.evaluate(new MathExpression(1, 7, '*')));
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(3, calc.evaluate(new MathExpression(1, 2, '+'))),
+                () -> Assertions.assertEquals(7, calc.evaluate(new MathExpression(1, 7, '*')))
+        );
     }
 }
