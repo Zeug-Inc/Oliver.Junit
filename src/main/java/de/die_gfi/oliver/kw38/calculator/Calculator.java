@@ -1,12 +1,22 @@
 package de.die_gfi.oliver.kw38.calculator;
 
+import java.util.Scanner;
+
 public class Calculator {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Geben Sie den mathematischen Ausdruck ein:");
+        String line = scanner.nextLine();
 
-
-
+        Calculator calc = new Calculator();
+        MathExpression expr = calc.parse(line);
+        if (expr == null) {
+            System.out.println("Ungültiger Ausdruck");
+        } else {
+            System.out.println("Das Ergebnis ist " + calc.evaluate(expr));
+        }
     }
 
 
