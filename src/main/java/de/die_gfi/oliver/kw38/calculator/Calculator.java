@@ -2,7 +2,9 @@ package de.die_gfi.oliver.kw38.calculator;
 
 public class Calculator {
 
+    public static void main(String[] args) {
 
+    }
     /**
      * Parse a string comprised of an operator and two operands
      * @param line to parse
