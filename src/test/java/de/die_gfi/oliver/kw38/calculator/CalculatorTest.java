@@ -10,18 +10,24 @@ class CalculatorTest {
     @Test
     void testParseString() {
 
-        Calculator c = new Calculator();
+        Calculator calc = new Calculator();
         Assertions.assertAll(
-                () -> Assertions.assertEquals(new Elements(1, 2, '+'), c.parse("1+2")),
-                () -> Assertions.assertEquals(new Elements(3, 4, '+'), c.parse("3+4")),
-                () -> Assertions.assertEquals(new Elements(7, 8, '*'), c.parse("7*8")),
-                () -> Assertions.assertEquals(new Elements(5, 5, '*'), c.parse("  5 * 5 ")),
+                () -> Assertions.assertEquals(new MathExpression(1, 2, '+'), calc.parse("1+2")),
+                () -> Assertions.assertEquals(new MathExpression(3, 4, '+'), calc.parse("3+4")),
+                () -> Assertions.assertEquals(new MathExpression(7, 8, '*'), calc.parse("7*8")),
+                () -> Assertions.assertEquals(new MathExpression(5, 5, '*'), calc.parse("  5 * 5 ")),
                 // Detect invalid strings
-                () -> assertNull(c.parse("  5 - 5 ")),
-                () -> assertNull(c.parse("  5 --- 5 ")),
-                () -> assertNull(c.parse(""))
+                () -> assertNull(calc.parse("  5 - 5 ")),
+                () -> assertNull(calc.parse("  5 --- 5 ")),
+                () -> assertNull(calc.parse(""))
         );
+    }
 
+    @Test
+    void testEvaluate() {
 
+        Calculator calc = new Calculator();
+        Assertions.assertEquals(3, calc.evaluate(new MathExpression(1, 2, '+')));
+        Assertions.assertEquals(7, calc.evaluate(new MathExpression(1, 7, '*')));
     }
 }
