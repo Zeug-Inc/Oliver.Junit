@@ -10,7 +10,7 @@ public class StringGames {
 
     String input = "fjslkfjf99jkljlk8454jlkjljl545ljkj5454jljljj555";
             // "Peter, Franz,             Verena,Sophia";
-    String[] words = input.split("\\d+");
+    String[] words = input.split("[01]");
     System.out.println("'" + input + "'" + " --> " + Arrays.toString(words));
 
 
