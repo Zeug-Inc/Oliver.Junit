@@ -4,6 +4,7 @@ public class Meal {
 
     String meal;
     double price;
+    int count;
 
     public Meal(String meal, double price) {
         this.meal = meal;

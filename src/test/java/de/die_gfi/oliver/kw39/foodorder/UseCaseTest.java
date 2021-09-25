@@ -20,17 +20,12 @@ public class UseCaseTest {
 
 
         // Create groups
-        Group azubis = new Group("Azubis", new Person[]{a,b});
-        Group seminarleiter = new Group("Seminarleiter", new Person[]{c,d,e});
+        Group azubis = new Group("Azubis", new ArrayList<>(Arrays.asList(a, b)));
+        Group seminarleiter = new Group("Seminarleiter", new ArrayList<>(Arrays.asList(c, d, e)));
 
         // Create Menu
-        ArrayList<String> mon =  new ArrayList(Arrays.asList("Jägerschnitzel", "Gemüsepfanne"));
-        ArrayList<String> tue =  new ArrayList(Arrays.asList("Osso Buco", "Champignons"));
-        ArrayList<String> wed =  new ArrayList(Arrays.asList("Schnitzel", "Penne al Arrabbiata"));
-        ArrayList<String> thu =  new ArrayList(Arrays.asList("Wiener Schnitzel", "Spaghetti"));
-        ArrayList<String> fri =  new ArrayList(Arrays.asList("Forelle", "Tortellini"));
 
-        WeeklyMenu m = new WeeklyMenu(mon, tue, wed, thu, fri);
+        WeeklyMenu m = WeeklyMenuTest.createMenu();
 
         // Print  list for each group
 

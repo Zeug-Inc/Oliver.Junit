@@ -6,10 +6,12 @@ public class Person {
 
     String firstName;
     String lastName;
+    double toPay;
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.toPay = 0;
     }
 
     @Override
