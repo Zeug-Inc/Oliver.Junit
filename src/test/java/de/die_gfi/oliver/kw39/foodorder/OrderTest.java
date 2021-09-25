@@ -12,7 +12,7 @@ class OrderTest {
                 Person a = new Person("Franz", "Meier");
                 Assertions.assertEquals(a, new Person("Franz", "Meier"));
 
-                Orders.orderMeal(a, /* Option 1 on Monday */, 0 /* no order on Tuesday */, 2, 1, 2);
+                Orders.orderMeal(a, null, 1 /* Option 1 on Monday */, 0 /* no order on Tuesday */, 2, 1, 2);
 
 
         }

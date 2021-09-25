@@ -4,7 +4,7 @@ public class Orders {
 
     Group g;
 
-    void orderMeal(Person p, WeeklyMenu menu, int mon, int tue, int wed, int thu, int fri) {
+    public static void orderMeal(Person p, WeeklyMenu menu, int mon, int tue, int wed, int thu, int fri) {
 
         //
 
