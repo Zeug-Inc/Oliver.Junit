@@ -8,18 +8,20 @@ public class StringGames {
 
     public static void main(String[] args) {
 
-    String input = "fjslkfjf99jkljlk8454jlkjljl545ljkj5454jljljj555";
-            // "Peter, Franz,             Verena,Sophia";
-    String[] words = input.split("[01]");
-    System.out.println("'" + input + "'" + " --> " + Arrays.toString(words));
+        String input = "lucretia\t    cesare Rodrigo    Anna";
 
+        /* String[] words = input.split("[\t ]"); */
+
+        String[] words = input.split("[\t ]+");
+
+        System.out.println("'" + input + "'" + " --> " + Arrays.toString(words));
 
 
     }
 
     private static void extracted1() {
-        String[]  array1 =  SortInteractive.extractNames("\t\t");
-        if ( array1 != null) {
+        String[] array1 = SortInteractive.extractNames("\t\t");
+        if (array1 != null) {
             System.out.println("length=" + array1.length);
             System.out.println(Arrays.toString(array1));
             System.out.println("'" + array1[0] + "'");
