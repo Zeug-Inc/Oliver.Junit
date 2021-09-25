@@ -17,7 +17,8 @@ class OrderTest {
         Assertions.assertAll(
                 () -> Assertions.assertEquals(0, p1.toPay),
                 () -> Assertions.assertEquals(0, p2.toPay),
-                () -> Assertions.assertEquals(0, p3.toPay));
+                () -> Assertions.assertEquals(0, p3.toPay)
+        );
 
         w.orderMeal(p1, 1, 0, 2, 1, 2); // Prices: 5 0 4 12 5 = 26
         w.orderMeal(p2, 1, 0, 1, 1, 1); // Prices: 5 0 7 12 14 = 38
@@ -30,6 +31,7 @@ class OrderTest {
         // Thu: A-2 B-1
         // Fri: A-1 B-2
 
+        // Check number of ordered meals
         Assertions.assertAll(
                 () -> Assertions.assertEquals(2, w.getCount(WeeklyMenu.Day.MON, WeeklyMenu.Dish.DISHA)),
                 () -> Assertions.assertEquals(1, w.getCount(WeeklyMenu.Day.MON, WeeklyMenu.Dish.DISHB)),

@@ -9,10 +9,14 @@ class PersonTest {
     @Test
     void testEquals() {
 
-        Person a = new Person("Franz","Meier");
+        Person a = new Person("Franz", "Meier");
         Person b = new Person("Franziska", "Mayer");
-        Assertions.assertEquals(a, a);
-        Assertions.assertNotEquals(a, b);
-        Assertions.assertNotEquals(b, a);
+
+        Assertions.assertAll(
+                () -> Assertions.assertNotNull(a),
+                () -> Assertions.assertNotNull(b),
+                () -> Assertions.assertEquals(a, a),
+                () -> Assertions.assertNotEquals(a, b),
+                () -> Assertions.assertNotEquals(b, a));
     }
 }

@@ -9,5 +9,6 @@ public class Meal {
     public Meal(String meal, double price) {
         this.meal = meal;
         this.price = price;
+        this.count = 0;
     }
 }
