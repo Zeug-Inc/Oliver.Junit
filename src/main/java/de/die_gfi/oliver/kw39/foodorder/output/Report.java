@@ -92,9 +92,10 @@ public class Report {
         for (Person p : everybody) {
             System.out.println("*** Bill for " + p.getFullName());
             for (Meal m : p.getOrders()) {
-                System.out.println(m);
+                System.out.printf("%-30s%10.2f\n", m.getDescription(), m.getPrice());
             }
-            System.out.println("Sum to pay: " + p.getToPay());
+            System.out.println("-".repeat(40));
+            System.out.printf("%-30s%10.2f\n", "Sum to pay:", p.getToPay());
             System.out.println();
         }
         System.out.println();

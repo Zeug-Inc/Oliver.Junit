@@ -6,6 +6,14 @@ public class Meal {
     double price;
     int count;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     public Meal(String description, double price) {
         this.description = description;
         this.price = price;
