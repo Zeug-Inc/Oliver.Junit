@@ -1,5 +1,6 @@
-package de.die_gfi.oliver.kw39.foodorder;
+package de.die_gfi.oliver.kw39.foodorder.logic;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Person {
@@ -8,10 +9,29 @@ public class Person {
     String lastName;
     double toPay;
 
+    public static ArrayList<Person> everybody = new ArrayList<>();
+
+
+
+    public static ArrayList<Person> getEverybody() {
+        return everybody;
+    }
+
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.toPay = 0;
+
+        everybody.add(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", toPay=" + toPay +
+                '}';
     }
 
     @Override

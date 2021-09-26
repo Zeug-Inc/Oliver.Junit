@@ -1,5 +1,7 @@
-package de.die_gfi.oliver.kw39.foodorder;
+package de.die_gfi.oliver.kw39.foodorder.logic;
 
+import de.die_gfi.oliver.kw39.foodorder.logic.Group;
+import de.die_gfi.oliver.kw39.foodorder.logic.Person;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

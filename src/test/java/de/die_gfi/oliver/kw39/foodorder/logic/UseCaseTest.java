@@ -1,4 +1,4 @@
-package de.die_gfi.oliver.kw39.foodorder;
+package de.die_gfi.oliver.kw39.foodorder.logic;
 
 import org.junit.jupiter.api.Test;
 

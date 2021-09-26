@@ -1,8 +1,9 @@
-package de.die_gfi.oliver.kw39.foodorder;
+package de.die_gfi.oliver.kw39.foodorder.logic;
 
+import de.die_gfi.oliver.kw39.foodorder.logic.Meal;
+import de.die_gfi.oliver.kw39.foodorder.logic.WeeklyMenu;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 

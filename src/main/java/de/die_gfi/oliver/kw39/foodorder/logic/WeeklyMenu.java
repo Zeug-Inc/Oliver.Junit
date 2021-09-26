@@ -1,4 +1,4 @@
-package de.die_gfi.oliver.kw39.foodorder;
+package de.die_gfi.oliver.kw39.foodorder.logic;
 
 import java.util.ArrayList;
 
@@ -18,13 +18,31 @@ public class WeeklyMenu {
         }
     }
 
+    public ArrayList<Meal> getMon() {
+        return mon;
+    }
+
+    public ArrayList<Meal> getTue() {
+        return tue;
+    }
+
+    public ArrayList<Meal> getWed() {
+        return wed;
+    }
+
+    public ArrayList<Meal> getThu() {
+        return thu;
+    }
+
+    public ArrayList<Meal> getFri() {
+        return fri;
+    }
+
     ArrayList<Meal> mon;
     ArrayList<Meal> tue;
     ArrayList<Meal> wed;
     ArrayList<Meal> thu;
     ArrayList<Meal> fri;
-
-    Integer[] orderCount = new Integer[5];
 
     /**
      * @param mon choice of meals for Monday
@@ -49,32 +67,27 @@ public class WeeklyMenu {
      * @param thu choice for Thursday
      * @param fri choice for Friday
      */
-    public void orderMeal(Person p, int mon, int tue, int wed, int thu, int fri) {
+    public void orderMeal(Person p, Meal mon, Meal tue, Meal wed, Meal thu, Meal fri) {
 
-        if (mon != 0) {
-            Meal m = this.mon.get(mon - 1);
-            m.count++;
-            p.toPay += m.price;
+        if (mon != null) {
+            mon.count++;
+            p.toPay += mon.price;
         }
-        if (tue != 0) {
-            Meal m = this.tue.get(tue - 1);
-            m.count++;
-            p.toPay += m.price;
+        if (tue != null) {
+            tue.count++;
+            p.toPay += tue.price;
         }
-        if (wed != 0) {
-            Meal m = this.wed.get(wed - 1);
-            m.count++;
-            p.toPay += m.price;
+        if (wed != null) {
+            wed.count++;
+            p.toPay += wed.price;
         }
-        if (thu != 0) {
-            Meal m = this.thu.get(thu - 1);
-            m.count++;
-            p.toPay += m.price;
+        if (thu != null) {
+            thu.count++;
+            p.toPay += thu.price;
         }
-        if (fri != 0) {
-            Meal m = this.fri.get(fri - 1);
-            m.count++;
-            p.toPay += m.price;
+        if (fri != null) {
+            fri.count++;
+            p.toPay += fri.price;
         }
 
     }

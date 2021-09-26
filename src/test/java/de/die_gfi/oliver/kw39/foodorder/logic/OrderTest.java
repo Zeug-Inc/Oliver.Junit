@@ -1,28 +1,36 @@
-package de.die_gfi.oliver.kw39.foodorder;
+package de.die_gfi.oliver.kw39.foodorder.logic;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class OrderTest {
+public class OrderTest {
+
+    WeeklyMenu w;
+
+    Person p1;
+    Person p2;
+    Person p3;
+
+    public OrderTest() {
+
+        w = WeeklyMenuTest.createMenu();
+
+        p1 = new Person("Franz", "Meier");
+        p2 = new Person("Susanne", "Müller");
+        p3 = new Person("Peter", "Roth");
+
+        w.orderMeal(p1, w.getMon().get(0), null, w.getWed().get(1), w.getThu().get(0), w.getFri().get(1)); // Prices: 5 0 4 12 5 = 26
+        w.orderMeal(p2, w.getMon().get(0), null, w.getWed().get(0), w.getThu().get(0), w.getFri().get(0)); // Prices: 5 0 4 12 5 = 26
+        w.orderMeal(p3, w.getMon().get(1), w.getTue().get(1), w.getWed().get(1), w.getThu().get(1), null); // Prices: 5 0 4 12 5 = 26
+
+    }
+
+    public WeeklyMenu getW() {
+        return w;
+    }
 
     @Test
     void testOrder() {
-
-        WeeklyMenu w = WeeklyMenuTest.createMenu();
-
-        Person p1 = new Person("Franz", "Meier");
-        Person p2 = new Person("Susanne", "Müller");
-        Person p3 = new Person("Peter", "Roth");
-
-        Assertions.assertAll(
-                () -> Assertions.assertEquals(0, p1.toPay),
-                () -> Assertions.assertEquals(0, p2.toPay),
-                () -> Assertions.assertEquals(0, p3.toPay)
-        );
-
-        w.orderMeal(p1, 1, 0, 2, 1, 2); // Prices: 5 0 4 12 5 = 26
-        w.orderMeal(p2, 1, 0, 1, 1, 1); // Prices: 5 0 7 12 14 = 38
-        w.orderMeal(p3, 2, 2, 2, 2, 0); // Prices: 4 4 4 5 0 = 17
 
         // Number of orders per item:
         // Mon: A-2 B-1
@@ -53,4 +61,7 @@ class OrderTest {
 
 
     }
+
+
+
 }
