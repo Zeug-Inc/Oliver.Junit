@@ -12,13 +12,13 @@ class ReportTest {
     @Test
     void testPrintReport() {
 
-        OrderTest t = new OrderTest();
-        WeeklyMenu w = t.getW();
-        Report r = new Report(w);
+        Report r = new Report(new OrderTest().getWeeklyMenu());
 
         r.printKitchenReport();
 
         r.printFinanceReport();
+
+        r.printIndividualBills();
 
     }
 

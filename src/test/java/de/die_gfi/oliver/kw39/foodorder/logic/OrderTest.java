@@ -25,7 +25,7 @@ public class OrderTest {
 
     }
 
-    public WeeklyMenu getW() {
+    public WeeklyMenu getWeeklyMenu() {
         return w;
     }
 

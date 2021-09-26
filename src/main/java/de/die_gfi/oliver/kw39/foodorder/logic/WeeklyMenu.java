@@ -72,22 +72,27 @@ public class WeeklyMenu {
         if (mon != null) {
             mon.count++;
             p.toPay += mon.price;
+            p.makeOrder(mon);
         }
         if (tue != null) {
             tue.count++;
             p.toPay += tue.price;
+            p.makeOrder(tue);
         }
         if (wed != null) {
             wed.count++;
             p.toPay += wed.price;
+            p.makeOrder(wed);
         }
         if (thu != null) {
             thu.count++;
             p.toPay += thu.price;
+            p.makeOrder(thu);
         }
         if (fri != null) {
             fri.count++;
             p.toPay += fri.price;
+            p.makeOrder(fri);
         }
 
     }

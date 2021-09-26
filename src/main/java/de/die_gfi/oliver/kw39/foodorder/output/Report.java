@@ -77,4 +77,26 @@ public class Report {
         }
         System.out.println();
     }
+
+
+    public void printIndividualBills() {
+
+        System.out.println();
+        System.out.println("-------------------------------");
+        System.out.println("*** Individual Bills Report ***");
+        System.out.println("-------------------------------");
+        System.out.println();
+
+        ArrayList<Person> everybody = Person.getEverybody();
+
+        for (Person p : everybody) {
+            System.out.println("*** Bill for " + p.getFullName());
+            for (Meal m : p.getOrders()) {
+                System.out.println(m);
+            }
+            System.out.println("Sum to pay: " + p.getToPay());
+            System.out.println();
+        }
+        System.out.println();
+    }
 }
