@@ -3,18 +3,19 @@ package de.die_gfi.oliver.playground;
 import de.die_gfi.oliver.kw38.sortinteractive.SortInteractive;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class StringGames {
 
     public static void main(String[] args) {
 
-        String input = "lucretia\t    cesare Rodrigo    Anna";
+        Map<String, String> environment = System.getenv();
+        String shell = environment.get("SHELL");
+        System.out.println("Shell = '" + shell + "'");
 
-        /* String[] words = input.split("[\t ]"); */
+        String propertyOS = System.getProperty("os.name");
+        System.out.println("propertyOS = '" + propertyOS + "'");
 
-        String[] words = input.split("[\t ]+");
-
-        System.out.println("'" + input + "'" + " --> " + Arrays.toString(words));
 
 
     }
